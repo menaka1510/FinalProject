@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Designgeek's portfolio">
+    <title>Designgeek portfolio</title>
+
+    <!-- external CSS link -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,800' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+    <!--This is the navigation section-->
+    <header>
+      <div class="navbar">
+      <h1>designgeek</h1>
+      <ul>
+        <li><a href="work.html">WORK</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+      </ul>
+    </div>
+    </header>
+    <main>
+
+      <!--This is the hero banner section-->
+      <section class="herobg">
+        <div class="hero-container">
+        <h1> I'm a design geek and...</h1>
+        <span class="btn-make">
+        <form>
+					<div class="styled-select">
+					<select id="make-stuff">
+						<option>Select to see what I do</option>
+					</select>
+				</div>
+				</form>
+        </span>
+      </div>
+      </section>
+    </main>
+      <!--This is the contact form section-->
+      <section class="contact">
+        <div class="col1">
+        <h1>Wanna make something together?</h1>
+        <p>Drop me a message and I'll get in touch soon!</p>
+        </div>
+
+        <div class="col2">
+        <form action="/my-contact-form-page" method="post">
+          <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" />
+          </div>
+
+          <div>
+          <label for="mail">E-mail</label>
+          <input type="email" id="mail" />
+          </div>
+
+          <div>
+          <label for="msg">Message</label>
+          <textarea id="msg"></textarea>
+          </div>
+
+          <div class="button">
+          <button type="submit">Send</button>
+          </div>
+        </form>
+      </div>
+      </section>
+
+      <!--This is the footer-->
+      <footer>
+      <p>Designed for GA final project</p>
+      </footer>
+
+      <script src="js/jquery.js"></script> <!-- linking to jQuery file -->
+  		<script defer type="text/javascript" src="js/fp-script.js"></script> <!-- linking to script file-->
+  </body>
+</html>
