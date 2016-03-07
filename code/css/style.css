@@ -64,9 +64,10 @@ header {
   background-color: #ffffff;
   height: 80px;
   width: 100%;
-  margin: 0 auto;
   display: flex;
+  position: fixed;
 }
+
 .navbar{
   box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -74,6 +75,7 @@ header {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  transition: all .1s linear;
 }
 .navbar a {
   color: #252525;
@@ -81,14 +83,13 @@ header {
   text-decoration: none;
   font-size: 1.2em;
 }
-
-.navbar a:hover {
+.navbar a:hover,.navbar a:active {
   color: #FF6978;
   font-weight: 300;
-  text-decoration:line-through;
+  text-decoration: none;
   font-size: 1.2em;
 }
-.navbar h1 {
+.navbar .home a {
   font-weight: 600;
   font-size: 2em;
   color: #252525;
@@ -96,15 +97,18 @@ header {
   justify-content: flex-start;
   padding: 0 35px 0 30px;
   transition: all .1s linear;
+  text-decoration: none;
 }
-.navbar h1:active{
+.navbar .home a:active, .home a:hover{
   color: orange;
-  transform: translateY(3px);
+  transform: translateY(-3px);
+  text-decoration: none;
 }
 .navbar ul {
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
+
 }
 .navbar li{
   padding-right: 40px;
@@ -113,11 +117,44 @@ header {
 /******************************************
 /* Footer section */
 footer{
-  background-color: #252525;
-  color: #FFFFFF;font-size: 1em;
-  padding:5px 15px;
+  background-color: #121111;
+  color: #FFFFFF;
+  font-size: 1.5rem;
   display:flex;
-  justify-content: flex-start;
+  justify-content: center;
+  margin: 0 auto;
+}
+.social{
+  padding: 25px 0;
+}
+.social ul{
+  display:flex;
+  justify-content: center;
+  flex-direction:row;
+}
+.social li {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.social li i,.social li a{
+  color:#FFFFFF;
+  font-size: 1.5em;
+  padding: 0 8px 8px 8px;
+  margin: 0 auto;
+  text-decoration: none;
+}
+.social p,.social i{
+  font-size: 1em;
+  font-weight: 300;
+  color:#FFFFFF;
+  margin: 0 auto;
+  transition: all .1s linear;
+}
+.social li i:hover{
+  color:#FF6978;
+  transform: translateY(-3px);
 }
 
 /********************************************
@@ -126,29 +163,50 @@ footer{
 /* Hero banner section */
 .hero-container{
   width: 100%;
-  height: 480px;
+  height: 768px;
   margin: 0 auto;
   z-index: -1;
-  background: url(../images/hero-0.jpg) no-repeat center top rgb(134,141,157);
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
+  padding-bottom: 220px;
 }
 .herobg h1{
   font-weight: 600;
   font-size: 3.5em;
   color: #FFFFFF;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, .2);
   margin: 0 30px;
   display: flex;
   justify-content: center;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
-.btn-make{
+.btn-make {
     display: flex;
     justify-content: center;
+    align-content: center;
+    padding-bottom: 15px;
+}
+#ctahidden a{
+  margin: 0 auto;
+  width:150px;
+  color:#121111;
+  font-weight: 600;
+  text-decoration: none;
+  background-color:#FF9522;
+  padding:10px 15px;
+  border-radius: 50px;
+  display:flex;
+  justify-content: space-around;
+  font-size: 1em;
+  cursor:auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+  transition: all .1s linear;
+}
+#ctahidden a:hover{
+  background-color:#FFFFFF;
+  transform: translateY(-3px);
 }
 .styled-select {
   width: 600px;
@@ -159,6 +217,7 @@ footer{
   border-radius: 50px;
   display:flex;
   justify-content: center;
+  align-items: center;
 }
 #make-stuff {
   font-family: 'Open Sans', sans-serif;
@@ -167,11 +226,12 @@ footer{
   border: none;
   border-radius: 50px;
   background: transparent;
-  padding:10px 60px 10px 30px;
+  padding:15px 80px 15px 30px;
   width: 600px;
   vertical-align: middle;
   -webkit-appearance: none;
 }
+
 /* Hero banner image classes */
 .ui {
   background: url(../images/hero-1.jpg) no-repeat center top rgb(134,141,157);
@@ -192,8 +252,7 @@ footer{
   background: url(../images/hero-6.jpg) no-repeat center top rgb(134,141,157);
 }
 .default{
-  background: url(../images/hero-0.jpg) no-repeat center top rgb(134,141,157);
-  background-size: cover;
+  background: url(../images/hero-0.gif) no-repeat center top rgb(134,141,157);
 }
 
 /******************************************
@@ -202,7 +261,7 @@ footer{
   background-color: #FF9522;
   margin: 0 auto;
   display:flex;
-  padding:30px 0;
+  padding:60px 0;
   flex-flow: row wrap;
   flex: auto;
   justify-content: center;
@@ -211,20 +270,20 @@ footer{
 .contact h1{
   font-weight: 600;
   font-size: 2.5em;
-  color:#252525;
+  color:#121111;
   margin-bottom: 5px;
 }
 .contact p{
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-weight: 300;
   padding-bottom: 20px;
-  color:#252525;
+  color:#121111;
 }
 .col1{
   display:flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin:0 30px 0 20px;
+  margin:0 40px 0 20px;
 }
 .col2 form{
   width:100%;
@@ -236,12 +295,10 @@ footer{
 input, select, textarea {
   font-family : inherit;
   font-size   : 100%;
-  width : 300px;
+  width : 400px;
   margin: 0;
-
-  -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
-     -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
-          box-sizing: border-box;
+  border:1px solid #C36E19;
+  padding-bottom: 10px;
 }
 textarea{
   padding-bottom: 40px;
@@ -253,8 +310,8 @@ label {
 	text-align: left;
 	margin-right: 5px;
 	width: 80px;
-  padding-bottom: 15px;
-  color: #252525;
+  padding-bottom: 25px;
+  color: #121111;
 }
 .button button{
   font-family: inherit;
@@ -268,6 +325,8 @@ label {
   background-color: #40D2FF;
   margin-top: 10px;
   float:right;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+  transition: all .1s linear;
 }
 
 .button button:hover {
@@ -283,6 +342,7 @@ label {
   margin-top: 10px;
   float:right;
   cursor:auto;
+  transform: translateY(-3px);
 }
 /********************************************
 /* ABOUT PAGE ELEMENTS
@@ -307,7 +367,7 @@ label {
   padding-top: 180px;
 }
 #ctabutton2{
-  padding-bottom: 20px;
+  padding-bottom: 25px;
 }
 #ctabutton2 a{
   font-family: inherit;
@@ -316,7 +376,7 @@ label {
   width: 150px;
   border: none;
   border-radius: 30px;
-  padding: 10px 20px;
+  padding: 10px 30px;
   color: #043049;
   background-color: #FFFFFF;
   margin-top: 10px;
@@ -329,7 +389,7 @@ label {
   width: 150px;
   border: none;
   border-radius: 30px;
-  padding: 10px 15px;
+  padding: 10px 30px;
   color: #043049;
   background-color: #FF9522;
   margin-top: 10px;
@@ -349,6 +409,7 @@ label {
   justify-content: flex-start;
   padding: 30px;
   width:50%;
+  vertical-align: top;
 }
 .col3 h1, .col4 h1{
   font-weight: 600;
@@ -363,11 +424,16 @@ label {
   text-decoration: none;
   font-size: 1.2em;
   font-weight: 300;
-  color:#FFFFFF;
+  color:#252525;
 }
 .col4 li a:hover{
   color: #FF9522;
   font-weight: 300;
   text-decoration:line-through;
   font-size: 1.2em;
+}
+i{
+  color:#252525;
+  font-size: 2rem;
+  padding-right: 8px;
 }

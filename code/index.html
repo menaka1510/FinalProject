@@ -27,7 +27,7 @@
 
       <!--This is the hero banner section-->
       <section class="herobg">
-        <div class="hero-container">
+        <div id="hero-container" class="hero-container default">
         <h1> I'm a design geek and...</h1>
         <span class="btn-make">
         <form>
@@ -38,6 +38,7 @@
 				</div>
 				</form>
         </span>
+        <div id="ctahidden"><a href="work.html">See More</a></div>
       </div>
       </section>
     </main>
@@ -57,7 +58,7 @@
 
           <div>
           <label for="mail">E-mail</label>
-          <input type="email" id="mail" />
+          <input type="email" id="mail" required/>
           </div>
 
           <div>
@@ -74,7 +75,16 @@
 
       <!--This is the footer-->
       <footer>
-      <p>&copy; Copyright 2016 | Menaka Chandrasekhar</p>
+        <div class="social">
+          <ul>
+            <li><a href="https://dribbble.com/designgeekme"target="_blank"><i class="fa fa-dribbble fa-lg"></i></a></li>
+            <li><a href="https://www.behance.net/menaka"target="_blank"><i class="fa fa-behance fa-lg"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/designgeekme/"target="_blank"><i class="fa fa-linkedin fa-lg"></i></a></li>
+            <li><a href="https://github.com/menaka1510"target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
+            </ul>
+            <p>Made with <i class="fa fa-heart fa-lg"></i>&amp; <i class="fa fa-coffee fa-lg"></i>by Menaka Chandrasekhar</p>
+        </div>
+
       </footer>
 
       <script src="js/jquery.js"></script> <!-- linking to jQuery file -->
